@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter basename={'movie-project'}>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
