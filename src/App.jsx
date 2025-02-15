@@ -6,7 +6,6 @@ import People from './pages/People';
 import { Routes, Route } from 'react-router-dom';
 import { MovieProvider } from './contexts/MovieContext';
 import NavBar from './components/NavBar';
-import UpcomingMovies from './pages/UpcomingMovies';
 
 function App() {
 
