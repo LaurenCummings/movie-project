@@ -13,3 +13,9 @@
     const data = await response.json();
     return data.results;
  };
+
+ export const getPopularPeople = async () => {
+   const response = await fetch(`${BASE_URL}/person/popular?api_key=${API_KEY}`);
+   const data = await response.json();
+   return data.results;
+ }
