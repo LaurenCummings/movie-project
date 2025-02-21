@@ -1,8 +1,8 @@
-import '../css/People.css';
+import '../css/PopPeople.css';
 import { useState, useEffect } from 'react';
 import { getPopularPeople } from '../services/api';
 
-function People() {
+function PopPeople() {
     const [people, setPeople] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ function People() {
     }, [])
 
     return (
-        <div className="people">
+        <div className="pop-people">
 
 
             {error && <div className="error-message">{error}</div>}
@@ -46,4 +46,4 @@ function People() {
     )
 }
 
-export default People;
+export default PopPeople;
