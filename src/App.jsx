@@ -18,7 +18,6 @@ function App() {
           <Route path="/" element={<PopMovies />} />
           <Route path="/movie-project" element={<PopMovies />} />
           <Route path="/now-showing" element={<NowShowing />} />
-          <Route path="/upcoming-movies" element={<UpcomingMovies />} />
           <Route path="/people" element={<People />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
