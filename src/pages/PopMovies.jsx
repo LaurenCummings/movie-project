@@ -1,9 +1,9 @@
-import '../css/Home.css';
+import '../css/PopMovies.css';
 import MovieCard from '../components/MovieCard';
 import { useState, useEffect } from 'react';
 import { getPopularMovies, searchMovies } from '../services/api';
 
-function Home() {
+function PopMovies() {
     const [searchQuery, setSearchQuery] = useState("");
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
@@ -45,7 +45,7 @@ function Home() {
     };
 
     return (
-        <div className="home">
+        <div className="pop-movies">
             <form onSubmit={handleSearch} className="search-form">
                 <input 
                     type="text" 
@@ -72,4 +72,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default PopMovies;
