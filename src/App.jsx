@@ -1,6 +1,7 @@
 import './css/App.css';
 import PopMovies from './pages/PopMovies';
 import UpcomingMovies from './pages/UpcomingMovies';
+import NowShowing from './pages/NowShowing';
 import Favorites from './pages/Favorites';
 import People from './pages/People';
 import { Routes, Route } from 'react-router-dom';
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PopMovies />} />
           <Route path="/movie-project" element={<PopMovies />} />
+          <Route path="/now-showing" element={<NowShowing />} />
           <Route path="/upcoming-movies" element={<UpcomingMovies />} />
           <Route path="/people" element={<People />} />
           <Route path="/favorites" element={<Favorites />} />
