@@ -9,7 +9,6 @@ function NavBar() {
                 <Link to="/">Movie App</Link>
             </div>
             <div className="navbar-links">
-                <Link to="/upcoming-movies" className="nav-link">Upcoming Movies</Link>
                 <Link to="/now-showing" className="nav-link">Now Showing</Link>
                 <Link to="/" className="nav-link">Popular Movies</Link>
                 <Link to="/people" className="nav-link">Popular People</Link>
