@@ -1,5 +1,6 @@
 import './css/App.css';
 import PopMovies from './pages/PopMovies';
+import MoviePage from './pages/MoviePage';
 import NowShowing from './pages/NowShowing';
 import Favorites from './pages/Favorites';
 import PopPeople from './pages/PopPeople';
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PopMovies />} />
           <Route path="/movie-project" element={<PopMovies />} />
+          <Route path="/movie-page" element={<MoviePage />} />
           <Route path="/now-showing" element={<NowShowing />} />
           <Route path="/pop-people" element={<PopPeople />} />
           <Route path="/favorites" element={<Favorites />} />
