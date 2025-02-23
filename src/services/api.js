@@ -14,6 +14,12 @@
     return data.results;
  };
 
+ export const searchPeople = async (query) => {
+   const response = await fetch(`${BASE_URL}/search/person?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+   const data = await response.json();
+   return data.results;
+};
+
  export const getPopularPeople = async () => {
    const response = await fetch(`${BASE_URL}/person/popular?api_key=${API_KEY}`);
    const data = await response.json();
