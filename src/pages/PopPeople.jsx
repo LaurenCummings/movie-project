@@ -1,6 +1,7 @@
 import '../css/PopPeople.css';
 import { useState, useEffect } from 'react';
 import { getPopularPeople, searchPeople } from '../services/api';
+import PersonCard from '../components/PersonCard';
 
 function PopPeople() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -61,12 +62,9 @@ function PopPeople() {
             {loading ? (
                 <div className="loading">Loading...</div> 
             ) : ( 
-                <div className="movies-grid">
+                <div className="people-grid">
                     {people.map((person) => (
-                        <div>
-                            <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name} />
-                            <h3>{person.name}</h3>
-                        </div>
+                        <PersonCard person={person} key={person.id}/>
                     ))}
                 </div>
             )}
