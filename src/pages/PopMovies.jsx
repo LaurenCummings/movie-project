@@ -2,6 +2,7 @@ import '../css/PopMovies.css';
 import MovieCard from '../components/MovieCard';
 import { useState, useEffect } from 'react';
 import { getPopularMovies, searchMovies } from '../services/api';
+import { Link } from 'react-router-dom';
 
 function PopMovies() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -64,7 +65,10 @@ function PopMovies() {
             ) : ( 
                 <div className="movies-grid">
                     {movies.map((movie) => (
-                        <MovieCard movie={movie} key={movie.id}/>
+                        <Link to="/movie-page" state= { movie }>
+                           <MovieCard movie={movie} key={movie.id}/> 
+                        </Link>
+                        
                     ))}
                 </div>
             )}
