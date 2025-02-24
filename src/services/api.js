@@ -30,4 +30,10 @@
   const response = await fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}`);
   const data = await response.json();
   return data.results;
-}
+};
+
+export const getCast = async (movieId) => {
+   const response = await fetch(`${BASE_URL}/movie/${movieId}/credits?language=en-US&api_key=${API_KEY}`);
+   const data = await response.json();
+   return data.cast;
+};
