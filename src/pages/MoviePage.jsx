@@ -28,30 +28,34 @@ function MoviePage() {
     }, [])
     
     return (
-        <div>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+        <div className="movie-page">
+            <div className="movie-image">
+                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            </div>
             <div className="movie-info">
                 <h2>{movie.title}</h2>
                 <p>{movie.release_date}</p>
                 <p>{movie.overview}</p>
-            </div>      
+            
+                {error && <div className="error-message">{error}</div>}
 
-            {error && <div className="error-message">{error}</div>}
-
-            {loading ? (
-                <div className="loading">Loading...</div> 
-            ) : ( 
-                <div className="movie-cast">
-                    <h3>Cast</h3>
-                    {cast.map((person) => (
-                        <div>
-                            <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
-                            <p>{person.name} as {person.character}</p>
+                {loading ? (
+                    <div className="loading">Loading...</div> 
+                ) : ( 
+                    <div>
+                        <h3>Cast</h3>
+                        <div className="movie-cast">
+                            {cast.map((person) => (
+                                <div className="cast-member">
+                                    <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                    <p className="cast-name">{person.name}</p>
+                                    <p className="cast-character">{person.character}</p>
+                                </div>
+                            ))}
                         </div>
-
-                    ))}
-                </div>
-            )}
+                    </div>
+                )}            
+            </div>      
         </div>     
     )
 }

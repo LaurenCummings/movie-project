@@ -1,0 +1,31 @@
+.movie-page {
+    display: flex;
+}
+
+.movie-image img {
+    border-radius: 8px;
+}
+
+.movie-cast {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.movie-cast img {
+    height: 200px;
+    border-radius: 8px;
+}
+
+.cast-member {
+    margin-bottom: 10px;
+}
+
+.movie-cast p{
+    text-align: center;
+}
+
+.cast-name {
+    font-weight: bold;
+}
