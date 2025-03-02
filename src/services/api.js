@@ -37,3 +37,9 @@ export const getCast = async (movieId) => {
    const data = await response.json();
    return data.cast;
 };
+
+export const getPersonDetails = async (personId) => {
+   const response = await fetch(`${BASE_URL}/person/${personId}?api_key=${API_KEY}`);
+   const data = await response.json();
+   return data;
+}

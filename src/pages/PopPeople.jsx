@@ -2,6 +2,7 @@ import '../css/PopPeople.css';
 import { useState, useEffect } from 'react';
 import { getPopularPeople, searchPeople } from '../services/api';
 import PersonCard from '../components/PersonCard';
+import { Link } from 'react-router-dom';
 
 function PopPeople() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -64,7 +65,9 @@ function PopPeople() {
             ) : ( 
                 <div className="people-grid">
                     {people.map((person) => (
-                        <PersonCard person={person} key={person.id}/>
+                        <Link to="/person-page" state={person} >
+                            <PersonCard person={person} key={person.id}/>
+                        </Link>
                     ))}
                 </div>
             )}
