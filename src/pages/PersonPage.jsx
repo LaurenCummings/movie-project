@@ -26,7 +26,7 @@ function PersonPage() {
 
         loadDetails();
     }, [])
-    
+
     return (
         <div className="person-page">
             <div className="person-image">
@@ -45,7 +45,15 @@ function PersonPage() {
                         <p>{details.biography}</p>
                     </div>
                 )}            
-            </div>      
+            </div>   
+            <div className="known-for">
+                {person.known_for.map((movie) => (
+                    <div>
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                        <p>{movie.title}</p>
+                    </div>
+                ))}
+            </div>   
         </div>     
     )
 }
