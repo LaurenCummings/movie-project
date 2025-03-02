@@ -2,13 +2,25 @@ import '../css/MoviePage.css';
 import { useLocation } from 'react-router-dom';
 import { getCast } from '../services/api';
 import { useState, useEffect } from 'react';
+import { useMovieContext } from '../contexts/MovieContext';
 
 function MoviePage() {
+    const location = useLocation();
+    const movie = location.state;   
+    const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext();
+    const favorite = isFavorite(movie.id);
     const [cast, setCast] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    const location = useLocation();
-    const movie = location.state;
+
+    function onFavoriteClick(e) {
+        e.preventDefault();
+        if (favorite) {
+            removeFromFavorites(movie.id);
+        } else {
+            addToFavorites(movie);
+        }
+    }
 
     useEffect(() => {
         const loadCast = async () => {
@@ -31,6 +43,9 @@ function MoviePage() {
         <div className="movie-page">
             <div className="movie-image">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                    <button className={`fav-btn ${favorite ? "active" : ""}`} onClick={onFavoriteClick}>
+                        ♥
+                    </button>
             </div>
             <div className="movie-info">
                 <h2>{movie.title}</h2>
