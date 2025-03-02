@@ -1,5 +1,5 @@
 import '../css/MoviePage.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { getCast } from '../services/api';
 import { useState, useEffect } from 'react';
 import { useMovieContext } from '../contexts/MovieContext';
@@ -62,7 +62,9 @@ function MoviePage() {
                         <div className="movie-cast">
                             {cast.map((person) => (
                                 <div className="cast-member">
-                                    <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                    <Link to="/person-page" state={person} >
+                                        <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                    </Link>
                                     <p className="cast-name">{person.name}</p>
                                     <p className="cast-character">{person.character}</p>
                                 </div>
