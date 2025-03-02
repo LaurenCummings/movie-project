@@ -2,6 +2,7 @@ import '../css/NowShowing.css';
 import MovieCard from '../components/MovieCard';
 import { useState, useEffect } from 'react';
 import { getNowShowing } from '../services/api';
+import { Link } from 'react-router-dom';
 
 function NowShowing() {
     const [movies, setMovies] = useState([]);
@@ -35,7 +36,9 @@ function NowShowing() {
             ) : ( 
                 <div className="movies-grid">
                     {movies.map((movie) => (
-                        <MovieCard movie={movie} key={movie.id}/>
+                        <Link to="/movie-page" state={movie} >
+                           <MovieCard movie={movie} key={movie.id}/> 
+                        </Link>
                     ))}
                 </div>
             )}
