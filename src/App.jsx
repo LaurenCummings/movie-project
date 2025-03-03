@@ -9,6 +9,7 @@ import PopPeople from './pages/PopPeople';
 import { Routes, Route } from 'react-router-dom';
 import { MovieProvider } from './contexts/MovieContext';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </main>
+      <Footer />
     </MovieProvider>
   );
 }
