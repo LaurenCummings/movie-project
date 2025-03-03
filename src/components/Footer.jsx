@@ -9,6 +9,10 @@ function Footer() {
             <p>This website uses TMDB and the TMDB APIs but 
                 is not endorsed, certified, or otherwise approved by TMDB.
             </p>
+            <p>
+                <a target="_blank" href="https://icons8.com/icon/2998/movie">Movie </a>
+                icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </p>
         </div>
     )
 }
