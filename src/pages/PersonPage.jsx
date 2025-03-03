@@ -1,4 +1,4 @@
-import '../css/MoviePage.css';
+import '../css/PersonPage.css';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPersonDetails, getFilmCredits } from '../services/api';

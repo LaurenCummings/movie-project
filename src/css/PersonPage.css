@@ -1,0 +1,23 @@
+.person-page {
+    display: flex;
+}
+
+.person-image {
+    position: relative;
+}
+
+.person-image img {
+    border-radius: 8px;
+}
+
+.movie-credits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.movie-credits img {
+    height: 200px;
+    border-radius: 8px;
+}
