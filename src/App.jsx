@@ -1,4 +1,5 @@
 import './css/App.css';
+import Home from './pages/Home';
 import PopMovies from './pages/PopMovies';
 import MoviePage from './pages/MoviePage';
 import PersonPage from './pages/PersonPage';
@@ -16,11 +17,12 @@ function App() {
       <NavBar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<PopMovies />} />
-          <Route path="/movie-project" element={<PopMovies />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/movie-project" element={<Home />} />
           <Route path="/movie-page" element={<MoviePage />} />
           <Route path="/person-page" element={<PersonPage />} />
           <Route path="/now-showing" element={<NowShowing />} />
+          <Route path="/pop-movies" element={<PopMovies />} />
           <Route path="/pop-people" element={<PopPeople />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
