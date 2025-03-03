@@ -50,29 +50,32 @@ function PersonPage() {
             <div className="person-image">
                 <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name} />
             </div>
-            <div className="person-info">
-                <h2>{person.name}</h2>
-            
-                {error && <div className="error-message">{error}</div>}
+            <div className="right-column">
+                <div className="person-info">
+                    <h2>{person.name}</h2>
+                
+                    {error && <div className="error-message">{error}</div>}
 
-                {loading ? (
-                    <div className="loading">Loading...</div> 
-                ) : ( 
-                    <div className="person-details">
-                        <p>{details.birthday}</p>
-                        <p>{details.biography}</p>
-                    </div>
-                )}            
-            </div>   
-            <div className="movie-credits">
-                {credits.map((movie) => (
-                    <div>
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                        <p>{movie.title}</p>
-                        <p>{movie.release_date}</p>
-                        <p>{movie.character}</p>
-                    </div>
-                ))}
+                    {loading ? (
+                        <div className="loading">Loading...</div> 
+                    ) : ( 
+                        <div className="person-details">
+                            <p>{details.birthday}</p>
+                            <p>{details.biography}</p>
+                        </div>
+                    )}            
+                </div>   
+                <h3>Filmography</h3>
+                <div className="movie-credits">
+                    {credits.map((movie) => (
+                        <div className="movie-credit-info">
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                            <p>{movie.title}</p>
+                            <p>{movie.release_date}</p>
+                            <p>{movie.character}</p>
+                        </div>
+                    ))}
+                </div>
             </div>   
         </div>     
     )

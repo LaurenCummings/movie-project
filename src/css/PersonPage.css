@@ -10,14 +10,27 @@
     border-radius: 8px;
 }
 
+.right-column {
+    margin-left: 20px;
+}
+
+.right-column h3 {
+    margin-left: 20px;
+}
+
 .movie-credits {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 .movie-credits img {
     height: 200px;
     border-radius: 8px;
+}
+
+.movie-credit-info {
+    margin-bottom: 10px;
 }
