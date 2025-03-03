@@ -42,4 +42,10 @@ export const getPersonDetails = async (personId) => {
    const response = await fetch(`${BASE_URL}/person/${personId}?api_key=${API_KEY}`);
    const data = await response.json();
    return data;
-}
+};
+
+export const getFilmCredits = async (personId) => {
+   const response = await fetch(`${BASE_URL}/person/${personId}/movie_credits?api_key=${API_KEY}`);
+   const data = await response.json();
+   return data.cast;
+};

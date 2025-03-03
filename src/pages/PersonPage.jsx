@@ -1,12 +1,13 @@
 import '../css/MoviePage.css';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getPersonDetails } from '../services/api';
+import { getPersonDetails, getFilmCredits } from '../services/api';
 
 function PersonPage() {
     const location = useLocation();
     const person = location.state;   
     const [details, setDetails] = useState([]);
+    const [credits, setCredits] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -25,6 +26,23 @@ function PersonPage() {
         }
 
         loadDetails();
+    }, [])
+
+    useEffect(() => {
+        const loadCredits = async () => {
+            try {
+                const receivedCredits = await getFilmCredits(person.id);
+                setCredits(receivedCredits);
+            } catch (err) {
+                console.log(err);
+                setError("Failed to load film credits...");
+            }
+            finally {
+                setLoading(false);
+            }
+        }
+
+        loadCredits();
     }, [])
 
     return (
@@ -46,11 +64,13 @@ function PersonPage() {
                     </div>
                 )}            
             </div>   
-            <div className="known-for">
-                {person.known_for.map((movie) => (
+            <div className="movie-credits">
+                {credits.map((movie) => (
                     <div>
                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                         <p>{movie.title}</p>
+                        <p>{movie.release_date}</p>
+                        <p>{movie.character}</p>
                     </div>
                 ))}
             </div>   
