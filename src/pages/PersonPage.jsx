@@ -45,6 +45,19 @@ function PersonPage() {
         loadCredits();
     }, [])
 
+    useEffect(() => {
+        function sortCredits() {
+            const creditsArray = [...credits];
+            creditsArray.sort((a, b) => {
+                if (a.release_date > b.release_date) return -1;
+                if (a.release_date < b.release_date) return 1;
+                return 0;
+            });
+            setCredits(creditsArray);
+        }
+        sortCredits();
+    }, [credits])
+
     return (
         <div className="person-page">
             <div className="person-image">
