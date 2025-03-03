@@ -1,5 +1,5 @@
 import '../css/PersonPage.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPersonDetails, getFilmCredits } from '../services/api';
 
@@ -8,6 +8,7 @@ function PersonPage() {
     const person = location.state;   
     const [details, setDetails] = useState([]);
     const [credits, setCredits] = useState([]);
+    const [sortedCredits, setSortedCredits] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -53,7 +54,7 @@ function PersonPage() {
                 if (a.release_date < b.release_date) return 1;
                 return 0;
             });
-            setCredits(creditsArray);
+            setSortedCredits(creditsArray);
         }
         sortCredits();
     }, [credits])
@@ -80,9 +81,11 @@ function PersonPage() {
                 </div>   
                 <h3>Filmography</h3>
                 <div className="movie-credits">
-                    {credits.map((movie) => (
+                    {sortedCredits.map((movie) => (
                         <div className="movie-credit-info">
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                            <Link to="/movie-page" state={movie}>
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                            </Link>
                             <p>{movie.title}</p>
                             <p>{movie.release_date}</p>
                             <p>{movie.character}</p>
