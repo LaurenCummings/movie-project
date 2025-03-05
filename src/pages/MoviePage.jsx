@@ -60,14 +60,16 @@ function MoviePage() {
                     <div>
                         <h3>Cast</h3>
                         <div className="movie-cast">
-                            {cast.map((person) => (
-                                <div className="cast-member">
-                                    <Link to="/person-page" state={person} >
-                                        <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
-                                    </Link>
-                                    <p className="cast-name">{person.name}</p>
-                                    <p className="cast-character">{person.character}</p>
-                                </div>
+                            {cast.map((person, index) => (
+                                index < 8 && (
+                                    <div className="cast-member">
+                                        <Link to="/person-page" state={person} >
+                                            <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                        </Link>
+                                        <p className="cast-name">{person.name}</p>
+                                        <p className="cast-character">{person.character}</p>
+                                    </div>  
+                                ) 
                             ))}
                         </div>
                     </div>
