@@ -12,6 +12,7 @@ function MoviePage() {
     const [cast, setCast] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    // setting up pushing to git - this comment should be deleted
 
     function onFavoriteClick(e) {
         e.preventDefault();
