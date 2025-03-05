@@ -12,7 +12,6 @@ function MoviePage() {
     const [cast, setCast] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    // setting up pushing to git - this comment should be deleted
 
     function onFavoriteClick(e) {
         e.preventDefault();
@@ -63,6 +62,20 @@ function MoviePage() {
                         <div className="movie-cast">
                             {cast.map((person, index) => (
                                 index < 8 && (
+                                    <div className="cast-member">
+                                        <Link to="/person-page" state={person} >
+                                            <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                        </Link>
+                                        <p className="cast-name">{person.name}</p>
+                                        <p className="cast-character">{person.character}</p>
+                                    </div>  
+                                ) 
+                            ))}
+                        </div>
+                        <button>Show More</button>
+                        <div className="movie-cast">
+                            {cast.map((person, index) => (
+                                index > 7 && (
                                     <div className="cast-member">
                                         <Link to="/person-page" state={person} >
                                             <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
