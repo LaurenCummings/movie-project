@@ -77,22 +77,26 @@ function MoviePage() {
                                 ) 
                             ))}
                         </div>
+                        {isExpanded ? (
+                            <div className="movie-cast">
+                                {cast.map((person, index) => (
+                                    index > 7 && (
+                                        <div className="cast-member">
+                                            <Link to="/person-page" state={person} >
+                                                <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
+                                            </Link>
+                                            <p className="cast-name">{person.name}</p>
+                                            <p className="cast-character">{person.character}</p>
+                                        </div>  
+                                    ) 
+                                ))}
+                            </div>                            
+                        ) : (
+                            null
+                        )}
                         <button onClick={toggleExpanded}>
                             {isExpanded ? 'Show Less' : 'Show More'}
-                        </button>
-                        <div className="movie-cast">
-                            {cast.map((person, index) => (
-                                index > 7 && (
-                                    <div className="cast-member">
-                                        <Link to="/person-page" state={person} >
-                                            <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
-                                        </Link>
-                                        <p className="cast-name">{person.name}</p>
-                                        <p className="cast-character">{person.character}</p>
-                                    </div>  
-                                ) 
-                            ))}
-                        </div>
+                        </button>                        
                     </div>
                 )}            
             </div>      
