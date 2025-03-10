@@ -12,6 +12,7 @@ function MoviePage() {
     const [cast, setCast] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     function onFavoriteClick(e) {
         e.preventDefault();
@@ -38,6 +39,10 @@ function MoviePage() {
 
         loadCast();
     }, [])
+
+    const toggleExpanded = () => {
+        setIsExpanded(!isExpanded);
+    };
     
     return (
         <div className="movie-page">
@@ -72,7 +77,9 @@ function MoviePage() {
                                 ) 
                             ))}
                         </div>
-                        <button>Show More</button>
+                        <button onClick={toggleExpanded}>
+                            {isExpanded ? 'Show Less' : 'Show More'}
+                        </button>
                         <div className="movie-cast">
                             {cast.map((person, index) => (
                                 index > 7 && (
