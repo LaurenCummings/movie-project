@@ -18,3 +18,15 @@
 .footer a {
     margin-right: 0;
 }
+
+@media (max-width: 630px) {
+    .footer {
+        height: 75px;
+    }
+}
+
+@media (max-width: 490px) {
+    .footer {
+        height: 100px;
+    }
+}
