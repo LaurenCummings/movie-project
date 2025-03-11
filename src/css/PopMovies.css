@@ -41,7 +41,15 @@
   .search-button:hover {
     background-color: #f40612;
   }
-  
+
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }   
   
   @media (max-width: 639px) {
     .pop-movies {
@@ -52,12 +60,10 @@
       margin-bottom: 1rem;
     }
   }
-  
-  .movies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-  }  
+
+  @media (max-width: 450px) {
+    .search-form {
+      max-width: 350px;
+    }
+  }
+ 
