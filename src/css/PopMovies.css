@@ -63,7 +63,11 @@
 
   @media (max-width: 450px) {
     .search-form {
-      max-width: 350px;
+      max-width: 250px;
+    }
+
+    .search-button {
+      padding: 0.75rem 0.5rem;
     }
   }
  
