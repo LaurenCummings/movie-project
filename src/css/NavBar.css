@@ -40,6 +40,15 @@
       display: none;
     }
 
+    @keyframes rollIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     .navbar-links.menuOpen {
       display: block;
       width: 150px;
@@ -51,6 +60,7 @@
       padding-top: 10px;
       padding-bottom: 20px;
       z-index: 100;
+      animation: rollIn .3s ease-in;
     }
 
     .navbar-links.menuOpen a {
