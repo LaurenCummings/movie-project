@@ -65,6 +65,7 @@
     .search-form {
       max-width: 250px;
       padding: 0 0.1rem;
+      margin-left: 3px;
     }
 
     .search-button {
