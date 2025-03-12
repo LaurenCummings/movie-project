@@ -10,5 +10,6 @@
   @media (max-width: 450px) {
     .main-content {
       padding: 0.25rem;
+      margin: 0;
     }
   }
