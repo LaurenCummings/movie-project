@@ -68,7 +68,17 @@
   }
 
   @media(max-width: 550px) {
+    .movie-image img {
+        width: 450px;
+    }
+    
     .movie-cast {
         grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media(max-width: 420px) {
+    .movie-image img {
+        width: 340px;
     }
   }
