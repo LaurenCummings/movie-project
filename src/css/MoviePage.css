@@ -1,5 +1,6 @@
 .movie-page {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .movie-image {
@@ -58,4 +59,16 @@
   
   .fav-btn.active {
     color: #ff4757;
+  }
+
+  @media(max-width: 700px) {
+    .movie-cast {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media(max-width: 550px) {
+    .movie-cast {
+        grid-template-columns: 1fr 1fr;
+    }
   }
