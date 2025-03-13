@@ -61,6 +61,11 @@
     color: #ff4757;
   }
 
+  .movie-info button {
+    display: block;
+    margin: auto;
+  }
+
   @media(max-width: 700px) {
     .movie-cast {
         grid-template-columns: 1fr 1fr 1fr;
