@@ -73,7 +73,7 @@
     color: #ff4757;
   }
   
-  .movie-info {
+  .movie-card-info {
     padding: 1rem;
     flex: 1;
     display: flex;
@@ -81,12 +81,12 @@
     gap: 0.5rem;
   }
   
-  .movie-info h3 {
+  .movie-card-info h3 {
     font-size: 1rem;
     margin: 0;
   }
   
-  .movie-info p {
+  .movie-card-info p {
     color: #999;
     font-size: 0.9rem;
   }
@@ -96,7 +96,7 @@
       font-size: 0.9rem;
     }
   
-    .movie-info {
+    .movie-card-info {
       padding: 0.75rem;
     }
   
