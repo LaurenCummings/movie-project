@@ -12,6 +12,16 @@ function PersonPage() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const formattedDate = (date) => {
+        if (date) {
+            const month = date?.split("-")[1];
+            const day = date?.split("-")[2];
+            const year = date?.split("-")[0];
+            return month + "-" + day + "-" + year;            
+        }
+        else return "";
+    }
+
     useEffect(() => {
         const loadDetails = async () => {
             try {
@@ -74,7 +84,7 @@ function PersonPage() {
                         <div className="loading">Loading...</div> 
                     ) : ( 
                         <div className="person-details">
-                            <p>{details.birthday}</p>
+                            <p>{formattedDate(details.birthday)}</p>
                             <p>{details.biography}</p>
                         </div>
                     )}            
@@ -87,7 +97,7 @@ function PersonPage() {
                                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                             </Link>
                             <p>{movie.title}</p>
-                            <p>{movie.release_date}</p>
+                            <p>{formattedDate(movie.release_date)}</p>
                             <p>{movie.character}</p>
                         </div>
                     ))}
