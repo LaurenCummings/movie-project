@@ -23,6 +23,13 @@ function MoviePage() {
         }
     }
 
+    const formattedDate = () => {
+        const release_month = movie.release_date?.split("-")[1];
+        const release_day = movie.release_date?.split("-")[2];
+        const release_year = movie.release_date?.split("-")[0];
+        return release_month + "-" + release_day + "-" + release_year;
+    }
+
     useEffect(() => {
         const loadCast = async () => {
             try {
@@ -54,7 +61,7 @@ function MoviePage() {
             </div>
             <div className="movie-info">
                 <h2>{movie.title}</h2>
-                <p>{movie.release_date}</p>
+                <p>{formattedDate()}</p>
                 <p>{movie.overview}</p>
             
                 {error && <div className="error-message">{error}</div>}
