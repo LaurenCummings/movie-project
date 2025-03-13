@@ -85,5 +85,12 @@
   @media(max-width: 420px) {
     .movie-image img {
         width: 340px;
+        display: block;
+        margin: auto;
+    }
+
+    .movie-info {
+      display: block;
+      margin: auto;
     }
   }
