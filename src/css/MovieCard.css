@@ -106,3 +106,13 @@
       font-size: 1.2rem;
     }
   }
+
+  @media (max-width: 420px) {
+    .movie-overlay {
+      opacity: 1;
+    }
+    
+    .favorite-btn {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
