@@ -125,9 +125,9 @@ function PersonPage() {
                         ))} 
                     </div>                                           
                 ) : null}
-                <div>
+                <div className="show-more-movies">
                     {sortedCredits.length > 7 ? (
-                        <button className="show-more-movies" onClick={toggleExpanded}>
+                        <button onClick={toggleExpanded}>
                             {isExpanded ? 'Show Less' : 'Show More'}
                         </button>
                     ) : null}

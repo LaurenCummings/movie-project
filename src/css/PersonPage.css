@@ -36,6 +36,11 @@
     text-align: center;
 }
 
+.show-more-movies button {
+    display: block;
+    margin: auto;
+}
+
 @media (max-width: 1160px) {
     .person-page {
         flex-wrap: wrap;

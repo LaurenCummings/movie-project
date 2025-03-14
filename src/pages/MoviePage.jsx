@@ -105,7 +105,7 @@ function MoviePage() {
                             null
                         )}
                         {cast.length > 7 ? (
-                            <button className="show-more-cast" onClick={toggleExpanded}>
+                            <button onClick={toggleExpanded}>
                                 {isExpanded ? 'Show Less' : 'Show More'}
                             </button>                             
                         ) : null}
