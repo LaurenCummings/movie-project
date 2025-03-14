@@ -92,7 +92,7 @@ function PersonPage() {
                 <h3>Filmography</h3>
                 <div className="movie-credits">
                     {sortedCredits.map((movie) => (
-                        <div className="movie-credit-info">
+                        <div key={movie.id} className="movie-credit-info">
                             <Link to="/movie-page" state={movie}>
                                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                             </Link>
