@@ -96,16 +96,36 @@ function PersonPage() {
                 </div>   
                 <h3>Filmography</h3>
                 <div className="movie-credits">
-                    {sortedCredits.map((movie) => (
-                        <div key={movie.id} className="movie-credit-info">
-                            <Link to="/movie-page" state={movie}>
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                            </Link>
-                            <p>{movie.title}</p>
-                            <p>{formattedDate(movie.release_date)}</p>
-                            <p>{movie.character}</p>
-                        </div>
+                    {sortedCredits.map((movie, index) => (
+                        index < 8 && (
+                            <div key={movie.id} className="movie-credit-info">
+                                <Link to="/movie-page" state={movie}>
+                                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                                </Link>
+                                <p>{movie.title}</p>
+                                <p>{formattedDate(movie.release_date)}</p>
+                                <p>{movie.character}</p>
+                            </div>                           
+                        )
                     ))}
+                </div>
+                {isExpanded ? (                
+                    <div className="movie-credits">
+                        {sortedCredits.map((movie, index) => (
+                            index > 7 && (
+                                <div key={movie.id} className="movie-credit-info">
+                                    <Link to="/movie-page" state={movie}>
+                                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                                    </Link>
+                                    <p>{movie.title}</p>
+                                    <p>{formattedDate(movie.release_date)}</p>
+                                    <p>{movie.character}</p>
+                                </div>                           
+                            )
+                        ))} 
+                    </div>                                           
+                ) : null}
+                <div>
                     {sortedCredits.length > 7 ? (
                         <button className="show-more-movies" onClick={toggleExpanded}>
                             {isExpanded ? 'Show Less' : 'Show More'}
