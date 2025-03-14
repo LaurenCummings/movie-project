@@ -11,6 +11,7 @@ function PersonPage() {
     const [sortedCredits, setSortedCredits] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const formattedDate = (date) => {
         if (date) {
@@ -21,6 +22,10 @@ function PersonPage() {
         }
         else return "";
     }
+
+    const toggleExpanded = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     useEffect(() => {
         const loadDetails = async () => {
@@ -101,6 +106,11 @@ function PersonPage() {
                             <p>{movie.character}</p>
                         </div>
                     ))}
+                    {sortedCredits.length > 7 ? (
+                        <button className="show-more-movies" onClick={toggleExpanded}>
+                            {isExpanded ? 'Show Less' : 'Show More'}
+                        </button>
+                    ) : null}
                 </div>
             </div>   
         </div>     
