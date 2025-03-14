@@ -35,3 +35,31 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
+@media (max-width: 1160px) {
+    .person-page {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 650px) {
+    .person-image img {
+        width: 450px;
+    }
+
+    .movie-credits {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .movie-credits {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .person-image img {
+        width: 400px;
+    }
+}
