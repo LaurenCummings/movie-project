@@ -1,8 +1,7 @@
-# React + Vite
+Movie Database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project uses The Movie Database API to display information about popular movies and actors/actresses, and movies that are currently showing.
+There are also 2 separate search forms, one for movies and one for people.
+Clicking on a movie poster will display more details about that movie (release date, plot, and cast).
+Clicking on a person's picture will display more details about that person (birthdate, bio, and filmography).
+Users can also add movies to their favorites, which are displayed on a separate page.
