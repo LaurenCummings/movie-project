@@ -64,7 +64,17 @@
 }
 
 @media (max-width: 420px) {
+    .person-image {
+        display: block;
+        margin: auto;
+    }
+
     .person-image img {
-        width: 400px;
+        width: 340px;
+    }
+
+    .right-column {
+        display: block;
+        margin: auto;
     }
 }
