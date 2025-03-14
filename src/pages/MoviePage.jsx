@@ -74,7 +74,7 @@ function MoviePage() {
                         <div className="movie-cast">
                             {cast.map((person, index) => (
                                 index < 8 && (
-                                    <div className="cast-member">
+                                    <div key={cast.id} className="cast-member">
                                         <Link to="/person-page" state={person} >
                                             <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
                                         </Link>
@@ -88,7 +88,7 @@ function MoviePage() {
                             <div className="movie-cast">
                                 {cast.map((person, index) => (
                                     index > 7 && (
-                                        <div className="cast-member">
+                                        <div key={cast.id} className="cast-member">
                                             <Link to="/person-page" state={person} >
                                                 <img src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} alt={person.name}/>
                                             </Link>
