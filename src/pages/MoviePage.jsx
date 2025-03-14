@@ -71,6 +71,9 @@ function MoviePage() {
                 ) : ( 
                     <div>
                         <h3>Cast</h3>
+                        {cast.length == 0 ? (
+                            <p>There is no cast information available for this film</p>
+                        ) : null}
                         <div className="movie-cast">
                             {cast.map((person, index) => (
                                 index < 8 && (
