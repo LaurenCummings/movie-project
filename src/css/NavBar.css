@@ -13,9 +13,9 @@
   }
   
   .navbar-links {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-end;
+    display: inline-block;
+    right: 50px;
+    position: absolute;
   }
   
   .nav-link {
@@ -23,6 +23,7 @@
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.2s;
+    margin-left: 20px;
   }
   
   .nav-link:hover {
