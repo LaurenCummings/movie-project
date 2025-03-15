@@ -44,7 +44,7 @@
 
   .movies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
     gap: 1.5rem;
     padding: 1rem;
     width: 100%;
